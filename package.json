@@ -1,5 +1,5 @@
 {
-  "name": "stimulus-datatables",
+  "name": "rails-datatables",
   "version": "1.0.6",
   "description": "Run DataTables under Rails Turbolinks",
   "keywords": [
