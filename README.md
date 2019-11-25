@@ -1,7 +1,7 @@
-## DataTables Stimulus Wrapper
+## Run DataTables under Rails Turbolinks
 
 A [Stimulus](https://github.com/stimulusjs/stimulus) wrapper for
-[DataTables](https://datatables.net) under
+[DataTables](https://datatables.net) under Rails
 [Turbolinks](https://github.com/turbolinks/turbolinks).
 
 ![Toggle Scrolling demo](images/toggle-scrolling.gif)
@@ -53,13 +53,13 @@ Add [ajax-datatables-rails](https://github.com/jbox-web/ajax-datatables-rails) t
 gem 'ajax-datatables-rails'
 ```
 
-Add [stimulus-datatables](https://github.com/jgorman/stimulus-datatables)
+Add [rails-datatables](https://github.com/jgorman/rails-datatables)
 to package.json and register it with
 [Stimulus](https://github.com/stimulusjs/stimulus).
 
 
 ```
-yarn add stimulus-datatables
+yarn add rails-datatables
 ```
 
 ```js
@@ -76,13 +76,10 @@ require('datatables.net-scroller-bs4')
 
 // Stimulus setup.
 import { Application } from 'stimulus'
-import { definitionsFromContext } from 'stimulus/webpack-helpers'
 const application = Application.start()
-const controllers = require.context('../controllers', true, /\.js$/)
-application.load(definitionsFromContext(controllers))
 
-// Register the stimulus-datatables controller.
-import Datatable from 'stimulus-datatables'
+// Register the rails-datatables controller.
+import Datatable from 'rails-datatables'
 application.register('datatable', Datatable)
 ```
 
@@ -134,7 +131,7 @@ Call `this.debug(msg, data)` to write to console.log only when
 `this.config.debug` is true.
 
 ```js
-import DataTable from 'stimulus-datatables'
+import DataTable from 'rails-datatables'
 
 export default class extends DataTable {
   initialize() {
@@ -222,7 +219,7 @@ Here is the custom articles-datatable controller which toggles between
 scrolling and paging display modes.
 
 ```js
-import DataTable from 'stimulus-datatables'
+import DataTable from 'rails-datatables'
 
 export default class extends DataTable {
 
